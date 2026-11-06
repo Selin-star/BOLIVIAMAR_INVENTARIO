@@ -1,0 +1,1134 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Informe académico — BOLIVIAMAR S.R.L.</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><link rel="stylesheet" href="assets/css/style.css"><style>body{background:#f6f7fe} .container{max-width:1320px}.mermaid{overflow-x:auto}.card-custom{background:white;border-radius:17px;box-shadow:0 4px 14px #161b4410}.report-top{position:sticky;top:0;z-index:1040;background:#fff;box-shadow:0 2px 10px #10182810;padding:12px 4%}section[id]{scroll-margin-top:90px}@media print{.report-top{display:none}.sticky-top{position:static!important}.mermaid{break-inside:avoid}}</style></head><body><nav class="report-top d-flex justify-content-between align-items-center"><a href="index.html" class="btn btn-outline-primary btn-sm"><i class="bi bi-arrow-left"></i> Volver al sistema</a><strong>Informe académico · BOLIVIAMAR</strong><button onclick="window.print()" class="btn btn-sm btn-primary">Imprimir</button></nav><!-- ========================================================================
+     INFORME ACADÉMICO INTEGRADO EN LA WEB — ANÁLISIS Y DISEÑO DE SISTEMAS
+     EMPRESA: BOLIVIAMAR S.R.L. | PROYECTO: SISTEMA DE GESTIÓN DE INVENTARIO
+     ======================================================================== -->
+
+<div class="container py-4">
+    <!-- ENCABEZADO DEL INFORME -->
+    <div class="p-4 p-md-5 mb-4 rounded-4 shadow-sm" style="background: linear-gradient(135deg, var(--color-morado) 0%, var(--color-azul) 100%); color: #fff;">
+        <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge bg-white text-primary px-3 py-1 rounded-pill fw-bold">PROYECTO DE GRADO ACADÉMICO</span>
+            <span class="badge bg-info text-dark px-3 py-1 rounded-pill fw-bold">MATERIA: ANÁLISIS Y DISEÑO DE SISTEMAS</span>
+        </div>
+        <h1 class="display-6 fw-bold mb-2">Informe Técnico y Diseño de Sistema</h1>
+        <h2 class="h4 text-light fw-normal mb-3">Sistema Web de Gestión de Inventario de Juguetes — Boliviamar S.R.L.</h2>
+        <p class="mb-0 text-white-50" style="max-width: 900px;">
+            Documentación integral correspondiente al Análisis Estructurado y Análisis Orientado a Objetos (Capítulos 1 al 22),
+            con diagramación interactiva en Mermaid, especificación de requerimientos, modelo relacional, UML y arquitectura de software.
+        </p>
+    </div>
+
+    <!-- INTEGRANTES DEL PROYECTO: visible al inicio del informe -->
+    <div class="card-custom p-4 mb-4" style="border-top: 4px solid var(--color-morado);">
+        <h3 class="h5 fw-bold mb-3"><i class="bi bi-people-fill text-primary me-2"></i>Integrantes del proyecto</h3>
+        <ol class="row gy-2 mb-0 ps-4 text-secondary">
+            <li class="col-md-6">Orosco Cari Selin Amadeus</li>
+            <li class="col-md-6">Velarde Niganez Carlos Daniel</li>
+            <li class="col-md-6">Rivera Calani Hanssel Franco</li>
+            <li class="col-md-6">Perez Condori Helen</li>
+            <li class="col-md-6">Telleria Huanco Dorian Yesith</li>
+            <li class="col-md-6">Rojas Lima Emmuel Jhoasim</li>
+        </ol>
+    </div>
+
+    <div class="row g-4">
+        <!-- ÍNDICE DE NAVEGACIÓN RÁPIDA (STICKY SIDEBAR) -->
+        <div class="col-lg-3">
+            <div class="card-custom p-3 sticky-top" style="top: 80px; max-height: calc(100vh - 100px); overflow-y: auto;">
+                <h6 class="fw-bold text-uppercase text-muted mb-3" style="font-size: 0.75rem; letter-spacing: 0.5px;">
+                    <i class="bi bi-list-nested me-1"></i> Índice del Documento
+                </h6>
+                <div class="list-group list-group-flush small">
+                    <span class="fw-bold text-primary mt-2 mb-1" style="font-size: 0.8rem;">I. GENERALIDADES Y MARCO TEÓRICO</span>
+                    <a href="#sec-1" class="list-group-item list-group-item-action py-1 border-0">1. Introducción</a>
+                    <a href="#sec-2" class="list-group-item list-group-item-action py-1 border-0">2. Antecedentes de Boliviamar</a>
+                    <a href="#sec-3" class="list-group-item list-group-item-action py-1 border-0">3. Planteamiento del Problema</a>
+                    <a href="#sec-4" class="list-group-item list-group-item-action py-1 border-0">4. Árbol de Problemas</a>
+                    <a href="#sec-5" class="list-group-item list-group-item-action py-1 border-0">5. Formulación del Problema</a>
+                    <a href="#sec-6" class="list-group-item list-group-item-action py-1 border-0">6. Propósito del Estudio</a>
+                    <a href="#sec-7" class="list-group-item list-group-item-action py-1 border-0">7. Objetivo General</a>
+                    <a href="#sec-8" class="list-group-item list-group-item-action py-1 border-0">8. Objetivos Específicos</a>
+                    <a href="#sec-9" class="list-group-item list-group-item-action py-1 border-0">9. Métodos e Instrumentos</a>
+                    <a href="#sec-10" class="list-group-item list-group-item-action py-1 border-0">10. Justificación</a>
+                    <a href="#sec-11" class="list-group-item list-group-item-action py-1 border-0">11. Alcances y Límites</a>
+                    <a href="#sec-12" class="list-group-item list-group-item-action py-1 border-0">12. Planificación y Marco Teórico</a>
+
+                    <span class="fw-bold text-primary mt-3 mb-1" style="font-size: 0.8rem;">II. ANÁLISIS Y DISEÑO ESTRUCTURADO</span>
+                    <a href="#sec-13" class="list-group-item list-group-item-action py-1 border-0">13. Requisitos Funcionales y No Funcionales</a>
+                    <a href="#sec-14" class="list-group-item list-group-item-action py-1 border-0">14. Reglas de Negocio</a>
+                    <a href="#sec-15" class="list-group-item list-group-item-action py-1 border-0">15. Diagrama de Contexto</a>
+                    <a href="#sec-16" class="list-group-item list-group-item-action py-1 border-0">16. DFD Nivel 0 y Nivel 1</a>
+                    <a href="#sec-17" class="list-group-item list-group-item-action py-1 border-0">17. Diccionario de Datos y MER</a>
+
+                    <span class="fw-bold text-primary mt-3 mb-1" style="font-size: 0.8rem;">III. ANÁLISIS Y DISEÑO ORIENTADO A OBJETOS</span>
+                    <a href="#sec-18" class="list-group-item list-group-item-action py-1 border-0">18. Actores y Casos de Uso</a>
+                    <a href="#sec-19" class="list-group-item list-group-item-action py-1 border-0">19. Diagrama de Clases UML Completo</a>
+                    <a href="#sec-20" class="list-group-item list-group-item-action py-1 border-0">20. Diagrama de Actividades</a>
+                    <a href="#sec-21" class="list-group-item list-group-item-action py-1 border-0">21. Diagramas de Secuencia y Estados</a>
+                    <a href="#sec-22" class="list-group-item list-group-item-action py-1 border-0">22. Arquitectura de Software e Interfaces</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENIDO DETALLADO DEL INFORME -->
+        <div class="col-lg-9">
+
+            <!-- ================================================================
+                 PARTE I: GENERALIDADES Y MARCO TEÓRICO
+                 ================================================================ -->
+            <div class="card-custom p-4 p-md-5 mb-4">
+                <div class="border-bottom pb-3 mb-4">
+                    <span class="badge bg-purple-subtle text-primary px-3 py-1 rounded-pill fw-bold" style="background-color: var(--color-morado-light); color: var(--color-morado-dark);">PARTE I</span>
+                    <h2 class="fw-bold mt-2 text-primary">Generalidades y Marco Teórico</h2>
+                </div>
+
+                <!-- 1. INTRODUCCIÓN -->
+                <section id="sec-1" class="mb-5">
+                    <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">1. Introducción</h4>
+                    <p class="text-secondary">
+                        En el contexto del comercio y la distribución moderna de artículos didácticos, la gestión rigurosa del inventario constituye la columna vertebral de la eficiencia operativa y la satisfacción del cliente. La empresa <strong>Boliviamar S.R.L.</strong>, entidad boliviana con sólida presencia en el suministro de juguetes formativos, puzzles de madera, ábacos y materiales sensoriales, experimenta una creciente complejidad en la administración de sus existencias debido a la diversificación de su catálogo y a la operación concurrente en múltiples almacenes situados en las ciudades de El Alto, La Paz y Cochabamba.
+                    </p>
+                    <p class="text-secondary">
+                        El presente proyecto de grado académico para la materia <em>Análisis y Diseño de Sistemas</em> desarrolla e implementa un sistema informático transaccional web que solventa integralmente la dispersión de información, automatiza el cálculo de existencias físicas y valoradas, garantiza la consistencia del kardex mediante transacciones atómicas (ACID) y proporciona a la gerencia indicadores fiables para la toma de decisiones estratégicas.
+                    </p>
+                </section>
+
+                <!-- 2. ANTECEDENTES DE BOLIVIAMAR -->
+                <section id="sec-2" class="mb-5">
+                    <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">2. Antecedentes de Boliviamar S.R.L.</h4>
+                    <p class="text-secondary">
+                        Boliviamar S.R.L. fue constituida con la misión de impulsar la educación inicial y primaria en el Estado Plurinacional de Bolivia a través de la provisión de materiales didácticos de alta calidad pedagógica. Su actividad comprende tanto la importación de juguetes certificados no tóxicos como la producción artesanal en maderas nobles bolivianas (mara, cedro y eucalipto tratado).
+                    </p>
+                    <p class="text-secondary">
+                        Históricamente, el control de ingresos y egresos de mercadería se realizaba a través de cuadernos de kardex manuales y plantillas electrónicas desvinculadas entre sí. A medida que el volumen de distribución a colegios, programas gubernamentales de educación inicial y ferias didácticas se multiplicó, dicho esquema tradicional evidenció su vulnerabilidad, ocasionando desfases entre el stock físico y el teórico, pérdidas por extravío y desabastecimiento involuntario de artículos de alta demanda.
+                    </p>
+                </section>
+
+                <!-- 3. PLANTEAMIENTO DEL PROBLEMA -->
+                <section id="sec-3" class="mb-5">
+                    <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">3. Planteamiento del Problema</h4>
+                    <p class="text-secondary">
+                        El problema central identificado en la gestión operativa de Boliviamar S.R.L. radica en la <strong>inexistencia de un sistema web unificado y transaccional que centralice y valide en tiempo real el flujo de existencias de juguetes en sus diversos almacenes</strong>.
+                    </p>
+                    <p class="text-secondary">
+                        Las principales manifestaciones del problema son:
+                    </p>
+                    <ul class="text-secondary">
+                        <li><strong>Inconsistencia de existencias:</strong> Registro de salidas con cantidades superiores al inventario real presente en el depósito físico.</li>
+                        <li><strong>Carencia de trazabilidad:</strong> Pérdida de visibilidad de las transferencias de lotes de juguetes entre el Almacén Central de El Alto y las sucursales de distribución.</li>
+                        <li><strong>Omisión de alertas de reposición:</strong> Juguetes agotados en almacén sin aviso oportuno para efectuar nuevos pedidos a proveedores.</li>
+                        <li><strong>Dificultad en la consolidación de reportes:</strong> El cálculo de la valoración del inventario requería jornadas completas de cruce manual de planillas propensas a errores aritméticos.</li>
+                    </ul>
+                </section>
+
+                <!-- 4. ÁRBOL DE PROBLEMAS -->
+                <section id="sec-4" class="mb-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-0">4. Árbol de Problemas</h4>
+                        <button class="btn btn-sm btn-outline-primary" onclick="zoomDiagram('diag-arbol-problemas', 'Árbol de Problemas de Boliviamar S.R.L.')">
+                            <i class="bi bi-arrows-fullscreen me-1"></i> Ampliar Diagrama
+                        </button>
+                    </div>
+                    <div class="diagram-container" id="diag-arbol-problemas">
+                        <div class="mermaid">
+flowchart TD
+    subgraph Efectos ["EFECTOS (Consecuencias)"]
+        E1["Pérdida económica y demoras en despachos a clientes institucionales"]
+        E2["Desabastecimiento imprevisto y quiebres de stock en juguetes didácticos clave"]
+        E3["Desconfianza en los reportes de valoración y estados contables"]
+        E4["Fricciones operativas entre el personal de almacén y el área comercial"]
+    end
+
+    PC["PROBLEMA CENTRAL:<br><b>Deficiente control y falta de centralización transaccional en el inventario de juguetes en Boliviamar S.R.L.</b>"]:::problemaCentral
+
+    subgraph Causas ["CAUSAS DIRECTAS E INDIRECTAS"]
+        C1["Registro manual y descentralizado en planillas no integradas"]
+        C2["Inexistencia de validación concurrente de stock antes de autorizar despachos"]
+        C3["Falta de seguimiento formal y trazabilidad en traslados inter-almacenes"]
+        C4["Ausencia de un mecanismo automatizado de alertas de stock mínimo"]
+    end
+
+    C1 --> PC
+    C2 --> PC
+    C3 --> PC
+    C4 --> PC
+
+    PC --> E1
+    PC --> E2
+    PC --> E3
+    PC --> E4
+
+    classDef problemaCentral fill:#EF4444,stroke:#991B1B,stroke-width:2px,color:#fff,font-weight:bold;
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. FORMULACIÓN DEL PROBLEMA -->
+                <section id="sec-5" class="mb-5">
+                    <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">5. Formulación del Problema</h4>
+                    <div class="p-3 bg-light rounded border-start border-4 border-warning">
+                        <p class="mb-0 fw-semibold text-dark fst-italic">
+                            "¿De qué manera el desarrollo e implementación de un sistema web transaccional con arquitectura MVC y acceso a datos PDO MySQL optimizará el control, trazabilidad, transferencias y valoración del inventario de juguetes didácticos en la empresa Boliviamar S.R.L.?"
+                        </p>
+                    </div>
+                </section>
+
+                <!-- 6. PROPÓSITO DEL ESTUDIO -->
+                <section id="sec-6" class="mb-5">
+                    <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">6. Propósito del Estudio</h4>
+                    <p class="text-secondary">
+                        El propósito primordial es dotar a Boliviamar S.R.L. de una herramienta tecnológica moderna, robusta y accesible vía navegador que elimine la manipulación discrecional de existencias, automatice el kardex físico bajo estándares de auditoría, soporte operaciones multi-almacén y garantice la fidelidad de la información operativa y financiera requerida por la gerencia.
+                    </p>
+                </section>
+
+                <!-- 7. OBJETIVO GENERAL -->
+                <section id="sec-7" class="mb-5">
+                    <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">7. Objetivo General</h4>
+                    <div class="p-3 bg-light rounded border-start border-4 border-success">
+                        <p class="mb-0 fw-bold text-dark">
+                            Desarrollar e implementar un sistema web de gestión de inventario de juguetes para la empresa Boliviamar S.R.L., aplicando metodologías de análisis estructurado y orientado a objetos, arquitectura MVC, base de datos relacional MySQL normalizada y transacciones seguras con PDO, para asegurar el control fiable de existencias, transferencias y reportes analíticos.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- 8. OBJETIVOS ESPECÍFICOS -->
+                <section id="sec-8" class="mb-5">
+                    <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">8. Objetivos Específicos</h4>
+                    <ol class="text-secondary">
+                        <li class="mb-2"><strong>Levantar y sistematizar los requerimientos funcionales y no funcionales</strong> que regulan los procesos de almacenamiento, compras, despachos y traslados de juguetes educativos.</li>
+                        <li class="mb-2"><strong>Diseñar los modelos del sistema</strong> mediante herramientas de Análisis Estructurado (DFDs, Diccionario de Datos, MER) y Análisis Orientado a Objetos (Casos de Uso, Clases UML, Secuencia, Actividades y Estados).</li>
+                        <li class="mb-2"><strong>Construir una base de datos relacional normalizada en MySQL</strong> que garantice integridad referencial, índices óptimos y unicidad por producto y almacén.</li>
+                        <li class="mb-2"><strong>Implementar los módulos administrativos de catálogo</strong>: categorías pedagógicas, productos didácticos con SKU único, proveedores y almacenes.</li>
+                        <li class="mb-2"><strong>Desarrollar el motor transaccional de movimientos</strong> (entradas multi-producto, salidas con bloqueo de stock y transferencias atómicas inter-almacén) que actualice automáticamente el kardex físico.</li>
+                        <li class="mb-2"><strong>Integrar un módulo de alertas de stock y reportes ejecutivos</strong> con capacidad de exportación a CSV y plantillas imprimibles / PDF.</li>
+                        <li><strong>Establecer mecanismos de seguridad informática</strong>: control de acceso basado en roles (RBAC), tokens anti-CSRF, hash bcrypt y registro de auditoría.</li>
+                    </ol>
+                </section>
+
+                <!-- 9. MÉTODOS E INSTRUMENTOS -->
+                <section id="sec-9" class="mb-5">
+                    <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">9. Método, Medios e Instrumentos de Investigación</h4>
+                    <p class="text-secondary">
+                        Para la consecución de la investigación se utilizó el <strong>método deductivo-inductivo</strong>, partiendo del estudio general de las mejores prácticas de administración de inventarios (SCM) y deduciendo los requerimientos concretos aplicables a la empresa de juguetes didácticos.
+                    </p>
+                    <ul class="text-secondary">
+                        <li><strong>Medios de investigación:</strong> Revisión documental de normas tributarias y comerciales bolivianas, análisis de guías de despacho, notas de remisión y comprobantes de compra de Boliviamar.</li>
+                        <li><strong>Instrumentos:</strong> Guías de entrevista estructurada dirigidas a los encargados de almacén y cuestionarios sobre flujos de pedidos institucionales.</li>
+                    </ul>
+                </section>
+
+                <!-- 10. JUSTIFICACIÓN -->
+                <section id="sec-10" class="mb-5">
+                    <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">10. Justificación del Proyecto</h4>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded bg-light h-100">
+                                <h6 class="fw-bold text-primary mb-1"><i class="bi bi-gear-fill me-1"></i> Justificación Técnica</h6>
+                                <p class="small text-secondary mb-0">Implementación de estándares de ingeniería de software: desacoplamiento MVC, consultas preparadas contra inyecciones SQL, transacciones ACID con <code>FOR UPDATE</code> para concurrencia segura y diseño responsive multiplataforma.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded bg-light h-100">
+                                <h6 class="fw-bold text-success mb-1"><i class="bi bi-cash-coin me-1"></i> Justificación Económica</h6>
+                                <p class="small text-secondary mb-0">Mitiga pérdidas de capital por mermas, deterioros no detectados o sobre-almacenamiento de juguetes de baja rotación, optimizando el capital de trabajo de Boliviamar S.R.L.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded bg-light h-100">
+                                <h6 class="fw-bold text-info mb-1"><i class="bi bi-clock-history me-1"></i> Justificación Operativa</h6>
+                                <p class="small text-secondary mb-0">Disminuye los tiempos de registro de despachos y transferencias de 25 minutos manuales a menos de 45 segundos por transacción electrónica con emisión inmediata de comprobantes.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded bg-light h-100">
+                                <h6 class="fw-bold text-warning mb-1"><i class="bi bi-people-fill me-1"></i> Justificación Social</h6>
+                                <p class="small text-secondary mb-0">Asegura que los centros educativos bolivianos reciban sus materiales didácticos puntualmente y en óptimo estado, fomentando el desarrollo pedagógico de niños en edad escolar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 11. ALCANCES Y LÍMITES -->
+                <section id="sec-11" class="mb-5">
+                    <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">11. Alcances y Límites</h4>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded border-primary bg-white h-100">
+                                <h6 class="fw-bold text-primary mb-2"><i class="bi bi-check-all me-1"></i> Alcances Implementados</h6>
+                                <ul class="small text-secondary mb-0 ps-3">
+                                    <li>Gestión completa de Catálogos (Categorías, Productos, Proveedores, Almacenes).</li>
+                                    <li>Módulo de Entradas multi-item con detalle valorado.</li>
+                                    <li>Módulo de Salidas con validación obligatoria de existencias.</li>
+                                    <li>Transferencias atómicas entre múltiples sucursales.</li>
+                                    <li>Kardex físico valorado automatizado por almacén y por producto.</li>
+                                    <li>9 Reportes operacionales con filtros, CSV e impresión.</li>
+                                    <li>Seguridad RBAC (Admin, Almacén, Gerencia) y auditoría.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border rounded border-secondary bg-white h-100">
+                                <h6 class="fw-bold text-secondary mb-2"><i class="bi bi-slash-circle me-1"></i> Límites del Sistema</h6>
+                                <ul class="small text-secondary mb-0 ps-3">
+                                    <li>No incluye pasarela de pagos electrónicos ni comercio electrónico B2C.</li>
+                                    <li>No se integra con la facturación electrónica del SIN (Servicio de Impuestos Nacionales).</li>
+                                    <li>No contempla gestión de recursos humanos ni nómina de sueldos.</li>
+                                    <li>Los datos suministrados corresponden a demostración académica ficticia.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 12. PLANIFICACIÓN Y MARCO TEÓRICO -->
+                <section id="sec-12">
+                    <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">12. Planificación de Actividades y Marco Teórico</h4>
+                    <p class="text-secondary">
+                        El proyecto se estructuró bajo un modelo iterativo e incremental basado en el Proceso Unificado de Desarrollo (RUP), dividido en 4 fases principales:
+                    </p>
+                    <div class="table-responsive mb-4">
+                        <table class="table table-bordered table-sm small align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Fase RUP</th>
+                                    <th>Actividades Principales</th>
+                                    <th>Entregables Técnicos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>1. Inicio</strong></td>
+                                    <td>Entrevistas con stakeholders, levantamiento del problema, fijación de objetivos y límites.</td>
+                                    <td>Documento de Visión, Matriz de Requisitos.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2. Elaboración</strong></td>
+                                    <td>Modelado estructurado (DFD, MER), modelado orientado a objetos (UML) y arquitectura MVC.</td>
+                                    <td>Casos de Uso, Clases UML, Esquema SQL normalizado.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3. Construcción</strong></td>
+                                    <td>Codificación PHP 8.2 con PDO, interfaz Bootstrap 5, validación transaccional de stock.</td>
+                                    <td>Código fuente funcional, vistas, migraciones y seeders.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>4. Transición</strong></td>
+                                    <td>Pruebas funcionales de los 9 pasos del flujo de negocio, pruebas de estrés y despliegue local.</td>
+                                    <td>Manual de usuario, README y suite de pruebas.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="p-3 bg-light rounded border">
+                        <h6 class="fw-bold text-dark mb-2">Fundamentos del Marco Teórico:</h6>
+                        <ul class="text-secondary small mb-0">
+                            <li><strong>Kardex de Inventario Físico Valorado:</strong> Registro sistemático que mantiene el historial de entradas, salidas y saldos remanentes tanto en unidades físicas como en importes monetarios.</li>
+                            <li><strong>Transacciones ACID:</strong> Conjunto de propiedades (Atomicidad, Consistencia, Aislamiento, Durabilidad) que garantizan que las operaciones de modificación de inventario se ejecuten por completo o se anulen en su totalidad ante cualquier imprevisto.</li>
+                            <li><strong>Arquitectura Modelo-Vista-Controlador (MVC):</strong> Patrón de arquitectura de software que separa la lógica de acceso a datos (Modelos), la lógica de presentación visual (Vistas) y la orquestación del flujo de negocio (Controladores).</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ================================================================
+                 PARTE II: ANÁLISIS Y DISEÑO ESTRUCTURADO
+                 ================================================================ -->
+            <div class="card-custom p-4 p-md-5 mb-4">
+                <div class="border-bottom pb-3 mb-4">
+                    <span class="badge bg-purple-subtle text-primary px-3 py-1 rounded-pill fw-bold" style="background-color: var(--color-morado-light); color: var(--color-morado-dark);">PARTE II</span>
+                    <h2 class="fw-bold mt-2 text-primary">Análisis y Diseño Estructurado</h2>
+                </div>
+
+                <!-- 13. REQUISITOS FUNCIONALES Y NO FUNCIONALES -->
+                <section id="sec-13" class="mb-5">
+                    <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">13. Requisitos Funcionales y No Funcionales</h4>
+                    
+                    <h6 class="fw-bold text-primary mb-2">Requisitos Funcionales (RF):</h6>
+                    <div class="table-responsive mb-4">
+                        <table class="table table-bordered table-sm small align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th style="width: 15%;">Código</th>
+                                    <th style="width: 35%;">Nombre del Requisito</th>
+                                    <th>Descripción Operativa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>RF-01</code></td>
+                                    <td>Gestión de Categorías</td>
+                                    <td>Crear, editar, consultar y cambiar de estado categorías de juguetes didácticos. No permite eliminar categorías con productos asociados.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>RF-02</code></td>
+                                    <td>Gestión de Juguetes (Productos)</td>
+                                    <td>Registrar juguetes con SKU único, nombre, marca, precio referencial, edad recomendada, stock mínimo e imagen. El stock físico es de solo lectura.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>RF-03</code></td>
+                                    <td>Gestión de Proveedores</td>
+                                    <td>Registrar y mantener información de proveedores comerciales de insumos y juguetes, visualizando su historial de compras asociadas.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>RF-04</code></td>
+                                    <td>Gestión de Almacenes</td>
+                                    <td>Registrar almacenes físicos y consultar el desglose de existencias disponibles por cada ubicación de manera independiente.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>RF-05</code></td>
+                                    <td>Entradas de Mercadería</td>
+                                    <td>Registrar ingresos de múltiples juguetes en una sola operación transaccional, incrementando existencias y registrando el kardex.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>RF-06</code></td>
+                                    <td>Salidas de Inventario</td>
+                                    <td>Verificar existencias antes de autorizar despachos. Si la cantidad solicitada supera el stock disponible en el almacén, rechaza la operación por completo.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>RF-07</code></td>
+                                    <td>Transferencias Inter-almacén</td>
+                                    <td>Mover juguetes de un almacén origen a un almacén destino de forma atómica: descuenta en origen, suma en destino y mantiene el stock global intacto.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>RF-08</code></td>
+                                    <td>Kardex Automatizado</td>
+                                    <td>Generar y consultar la bitácora cronológica con saldos anteriores y resultantes para cada movimiento de almacén.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>RF-09</code></td>
+                                    <td>Alertas y Reportes Oficiales</td>
+                                    <td>Notificar productos agotados o bajo stock mínimo, y permitir la exportación de 9 tipos de reportes a formatos CSV e impresión / PDF.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h6 class="fw-bold text-primary mb-2">Requisitos No Funcionales (RNF):</h6>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded bg-light">
+                                <strong class="d-block text-dark mb-1">RNF-01: Rendimiento</strong>
+                                <span class="small text-secondary">Tiempos de respuesta menores a 500ms en consultas de inventario y ejecución de transacciones en menos de 200ms en el motor MySQL.</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded bg-light">
+                                <strong class="d-block text-dark mb-1">RNF-02: Seguridad</strong>
+                                <span class="small text-secondary">Protección contra inyección SQL mediante sentencias preparadas PDO, tokens anti-CSRF en todos los formularios y hashes bcrypt.</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded bg-light">
+                                <strong class="d-block text-dark mb-1">RNF-03: Usabilidad (UX)</strong>
+                                <span class="small text-secondary">Diseño responsive para laptops, tablets y móviles con paleta corporativa moderna y soporte opcional de Modo Oscuro.</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 14. REGLAS DE NEGOCIO -->
+                <section id="sec-14" class="mb-5">
+                    <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">14. Reglas de Negocio (RN)</h4>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-sm small align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th style="width: 15%;">Código</th>
+                                    <th style="width: 30%;">Regla</th>
+                                    <th>Criterio de Validación Implementado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>RN-01</code></td>
+                                    <td>Stock No Editable Directamente</td>
+                                    <td>Las existencias de un juguete no se ingresan ni se modifican manualmente en el catálogo de productos. Solo cambian por transacciones de entradas, salidas o transferencias.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>RN-02</code></td>
+                                    <td>No Negatividad de Existencias</td>
+                                    <td>El stock físico de un producto en cualquier almacén debe ser siempre un número entero mayor o igual a cero (<code>cantidad >= 0</code>).</td>
+                                </tr>
+                                <tr>
+                                    <td><code>RN-03</code></td>
+                                    <td>Atomicidad de Salidas</td>
+                                    <td>Si una salida involucra varios juguetes y uno de ellos no posee existencias suficientes en el almacén seleccionado, la operación se anula por completo (Rollback).</td>
+                                </tr>
+                                <tr>
+                                    <td><code>RN-04</code></td>
+                                    <td>Transferencias Entre Almacenes Distintos</td>
+                                    <td>El almacén origen y el almacén destino de una transferencia no pueden ser iguales (<code>almacen_origen != almacen_destino</code>).</td>
+                                </tr>
+                                <tr>
+                                    <td><code>RN-05</code></td>
+                                    <td>Conservación de Masa en Transferencias</td>
+                                    <td>En una transferencia, la cantidad descontada en origen es exactamente idéntica a la incrementada en destino; la suma de existencias de la empresa no varía.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>RN-06</code></td>
+                                    <td>Inmutabilidad de Kardex</td>
+                                    <td>Los registros de movimientos de inventario en el kardex son estrictamente de solo lectura y no pueden ser eliminados ni alterados para garantizar auditoría contable.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>RN-07</code></td>
+                                    <td>Clasificación de Alertas de Stock</td>
+                                    <td>
+                                        Agotado: <code>Stock == 0</code><br>
+                                        Bajo Stock: <code>0 &lt; Stock &lt; Stock_Minimo</code><br>
+                                        En Mínimo: <code>Stock == Stock_Minimo</code><br>
+                                        Normal: <code>Stock &gt; Stock_Minimo</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>RN-08</code></td>
+                                    <td>Integridad Referencial de Categorías</td>
+                                    <td>No se permite la eliminación física de una categoría si tiene productos registrados; debe desactivarse lógicamente para preservar el historial.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- 15. DIAGRAMA DE CONTEXTO -->
+                <section id="sec-15" class="mb-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-0">15. Diagrama de Contexto</h4>
+                        <button class="btn btn-sm btn-outline-primary" onclick="zoomDiagram('diag-contexto', 'Diagrama de Contexto del Sistema Boliviamar')">
+                            <i class="bi bi-arrows-fullscreen me-1"></i> Ampliar Diagrama
+                        </button>
+                    </div>
+                    <div class="diagram-container" id="diag-contexto">
+                        <div class="mermaid">
+flowchart LR
+    subgraph Actores ["ENTIDADES EXTERNAS"]
+        ADM["Administrador del Sistema"]
+        ALM["Encargado de Almacén"]
+        GER["Gerencia de Operaciones"]
+        PROV["Proveedores de Juguetes"]
+    end
+
+    SIS(("<b>0. SISTEMA DE GESTIÓN DE INVENTARIO DE JUGUETES<br>BOLIVIAMAR S.R.L.</b>")):::sistemaCentro
+
+    ADM -->|"Parámetros, Usuarios, Categorías, Almacenes"| SIS
+    SIS -->|"Auditoría, Notificaciones y Logs"| ADM
+
+    ALM -->|"Registro de Entradas, Salidas y Transferencias"| SIS
+    SIS -->|"Comprobantes de Ingreso/Despacho, Alertas de Stock"| ALM
+
+    SIS -->|"Reportes de Valoración, Dashboard e Indicadores"| GER
+
+    PROV -.->|"Notas de Entrega / Facturas de Juguetes"| SIS
+
+    classDef sistemaCentro fill:#7C3AED,stroke:#5B21B6,stroke-width:3px,color:#fff,font-weight:bold;
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 16. DFD NIVEL 0 Y DFD NIVEL 1 -->
+                <section id="sec-16" class="mb-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-0">16. Diagrama de Flujo de Datos (DFD Nivel 0 y Nivel 1)</h4>
+                        <button class="btn btn-sm btn-outline-primary" onclick="zoomDiagram('diag-dfd1', 'Diagrama DFD Nivel 1 Boliviamar S.R.L.')">
+                            <i class="bi bi-arrows-fullscreen me-1"></i> Ampliar Diagrama
+                        </button>
+                    </div>
+                    <div class="diagram-container" id="diag-dfd1">
+                        <div class="mermaid">
+flowchart TD
+    %% Entidades Externas
+    E_ALM["Encargado de Almacén"]:::actor
+    E_ADM["Administrador"]:::actor
+    E_GER["Gerencia"]:::actor
+
+    %% Procesos Nivel 1
+    P1(("1.0 Gestionar<br>Catálogos")):::proceso
+    P2(("2.0 Procesar<br>Entradas")):::proceso
+    P3(("3.0 Procesar<br>Salidas con Validación")):::proceso
+    P4(("4.0 Procesar<br>Transferencias")):::proceso
+    P5(("5.0 Actualizar<br>Kardex")):::proceso
+    P6(("6.0 Generar<br>Alertas y Reportes")):::proceso
+
+    %% Almacenes de Datos
+    D_PROD[("D1: Productos")]:::almacen
+    D_ALM[("D2: Almacenes")]:::almacen
+    D_EXIST[("D3: Existencias")]:::almacen
+    D_MOV[("D4: Movimientos Kardex")]:::almacen
+
+    %% Flujos
+    E_ADM -->|"Datos de Categorías y Juguetes"| P1
+    P1 -->|"Registra/Actualiza"| D_PROD
+    P1 -->|"Registra/Actualiza"| D_ALM
+
+    E_ALM -->|"Detalle de Ingreso (Items, Cantidades)"| P2
+    P2 -->|"Lee/Valida"| D_PROD
+    P2 -->|"Incrementa Stock"| D_EXIST
+    P2 -->|"Envía Movimiento Entrada"| P5
+
+    E_ALM -->|"Solicitud de Salida (Items, Almacén)"| P3
+    P3 -->|"Consulta Stock Disponible"| D_EXIST
+    P3 -->|"Descuenta Stock (si válido)"| D_EXIST
+    P3 -->|"Envía Movimiento Salida"| P5
+
+    E_ALM -->|"Traslado (Origen, Destino, Items)"| P4
+    P4 -->|"Verifica Stock Origen"| D_EXIST
+    P4 -->|"Descuenta Origen y Suma Destino"| D_EXIST
+    P4 -->|"Envía Movimientos Transferencia"| P5
+
+    P5 -->|"Asienta Registro Histórico"| D_MOV
+
+    D_EXIST -->|"Lectura de Niveles de Stock"| P6
+    D_MOV -->|"Lectura de Historial"| P6
+    P6 -->|"Dashboard, Gráficos y Reportes"| E_GER
+    P6 -->|"Alertas de Stock Bajo/Agotado"| E_ALM
+
+    classDef actor fill:#2563EB,color:#fff,stroke:#1D4ED8,stroke-width:2px;
+    classDef proceso fill:#7C3AED,color:#fff,stroke:#6D28D9,stroke-width:2px;
+    classDef almacen fill:#F8FAFC,color:#1E293B,stroke:#94A3B8,stroke-width:2px;
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 17. DICCIONARIO DE DATOS Y MER -->
+                <section id="sec-17">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-0">17. Diccionario de Datos y Modelo Entidad–Relación (MER)</h4>
+                        <button class="btn btn-sm btn-outline-primary" onclick="zoomDiagram('diag-mer', 'Modelo Entidad-Relación Boliviamar S.R.L.')">
+                            <i class="bi bi-arrows-fullscreen me-1"></i> Ampliar Diagrama
+                        </button>
+                    </div>
+                    <p class="text-secondary small">
+                        El MER normalizado en Tercera Forma Normal (3FN) establece la separación de almacenes físicos, productos didácticos y el inventario centralizado en la tabla relacional <code>existencias</code> con clave única compuesta.
+                    </p>
+                    <div class="diagram-container" id="diag-mer">
+                        <div class="mermaid">
+erDiagram
+    ROLES ||--o{ USUARIO_ROL : tiene
+    USUARIOS ||--o{ USUARIO_ROL : pertenece
+    USUARIOS ||--o{ ENTRADAS : registra
+    USUARIOS ||--o{ SALIDAS : despacha
+    USUARIOS ||--o{ TRANSFERENCIAS : autoriza
+    USUARIOS ||--o{ AUDITORIA : ejecuta
+    USUARIOS ||--o{ MOVIMIENTOS_INVENTARIO : asienta
+
+    CATEGORIAS ||--o{ PRODUCTOS : agrupa
+    PROVEEDORES ||--o{ ENTRADAS : suministra
+
+    ALMACENES ||--o{ EXISTENCIAS : almacena
+    PRODUCTOS ||--o{ EXISTENCIAS : contiene
+    
+    ALMACENES ||--o{ ENTRADAS : recibe
+    ALMACENES ||--o{ SALIDAS : despacha_desde
+    ALMACENES ||--o{ TRANSFERENCIAS : es_origen
+    ALMACENES ||--o{ TRANSFERENCIAS : es_destino
+
+    ENTRADAS ||--|{ DETALLE_ENTRADA : compone
+    PRODUCTOS ||--o{ DETALLE_ENTRADA : detalla
+
+    SALIDAS ||--|{ DETALLE_SALIDA : compone
+    PRODUCTOS ||--o{ DETALLE_SALIDA : detalla
+
+    TRANSFERENCIAS ||--|{ DETALLE_TRANSFERENCIA : compone
+    PRODUCTOS ||--o{ DETALLE_TRANSFERENCIA : detalla
+
+    PRODUCTOS ||--o{ MOVIMIENTOS_INVENTARIO : registra
+    ALMACENES ||--o{ MOVIMIENTOS_INVENTARIO : pertenece
+
+    ROLES {
+        int id PK
+        string nombre UK
+        string descripcion
+    }
+
+    USUARIOS {
+        int id PK
+        string nombre
+        string apellidos
+        string usuario UK
+        string email UK
+        string password_hash
+        enum estado
+    }
+
+    CATEGORIAS {
+        int id PK
+        string nombre UK
+        text descripcion
+        enum estado
+    }
+
+    PRODUCTOS {
+        int id PK
+        string sku UK
+        string nombre
+        int categoria_id FK
+        string marca
+        decimal precio_referencial
+        string edad_recomendada
+        int stock_minimo
+        enum estado
+    }
+
+    ALMACENES {
+        int id PK
+        string nombre
+        string codigo UK
+        string direccion
+        string responsable
+        enum estado
+    }
+
+    EXISTENCIAS {
+        int id PK
+        int producto_id FK,UK
+        int almacen_id FK,UK
+        int cantidad
+    }
+
+    MOVIMIENTOS_INVENTARIO {
+        int id PK
+        datetime fecha
+        int producto_id FK
+        int almacen_id FK
+        enum tipo_movimiento
+        int cantidad_entrada
+        int cantidad_salida
+        int saldo_anterior
+        int saldo_resultante
+        string documento_referencia
+    }
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ================================================================
+                 PARTE III: ANÁLISIS Y DISEÑO ORIENTADO A OBJETOS
+                 ================================================================ -->
+            <div class="card-custom p-4 p-md-5 mb-4">
+                <div class="border-bottom pb-3 mb-4">
+                    <span class="badge bg-purple-subtle text-primary px-3 py-1 rounded-pill fw-bold" style="background-color: var(--color-morado-light); color: var(--color-morado-dark);">PARTE III</span>
+                    <h2 class="fw-bold mt-2 text-primary">Análisis y Diseño Orientado a Objetos (OOA/OOD)</h2>
+                </div>
+
+                <!-- 18. ACTORES Y CASOS DE USO -->
+                <section id="sec-18" class="mb-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-0">18. Actores y Casos de Uso del Sistema</h4>
+                        <button class="btn btn-sm btn-outline-primary" onclick="zoomDiagram('diag-casos-uso', 'Diagrama de Casos de Uso Boliviamar S.R.L.')">
+                            <i class="bi bi-arrows-fullscreen me-1"></i> Ampliar Diagrama
+                        </button>
+                    </div>
+                    <div class="diagram-container" id="diag-casos-uso">
+                        <div class="mermaid">
+flowchart LR
+    subgraph Actores ["ACTORES DEL SISTEMA"]
+        A_ADM["Administrador General"]
+        A_ALM["Encargado de Almacén"]
+        A_GER["Gerencia de Operaciones"]
+    end
+
+    subgraph CasosUso ["CASOS DE USO PRINCIPALES"]
+        CU01(["CU-01: Autenticar Usuario y Sesión"])
+        CU02(["CU-02: Gestionar Catálogo de Juguetes"])
+        CU03(["CU-03: Gestionar Almacenes y Categorías"])
+        CU04(["CU-04: Registrar Entrada de Juguetes"])
+        CU05(["CU-05: Registrar Salida con Validación"])
+        CU06(["CU-06: Realizar Transferencia Inter-Almacén"])
+        CU07(["CU-07: Consultar Kardex Físico Valorado"])
+        CU08(["CU-08: Monitorear Alertas de Stock"])
+        CU09(["CU-09: Generar Reportes y Exportar CSV"])
+        CU10(["CU-10: Administrar Usuarios y Roles"])
+    end
+
+    A_ADM --> CU01
+    A_ADM --> CU02
+    A_ADM --> CU03
+    A_ADM --> CU04
+    A_ADM --> CU05
+    A_ADM --> CU06
+    A_ADM --> CU07
+    A_ADM --> CU08
+    A_ADM --> CU09
+    A_ADM --> CU10
+
+    A_ALM --> CU01
+    A_ALM --> CU02
+    A_ALM --> CU04
+    A_ALM --> CU05
+    A_ALM --> CU06
+    A_ALM --> CU07
+    A_ALM --> CU08
+
+    A_GER --> CU01
+    A_GER --> CU07
+    A_GER --> CU08
+    A_GER --> CU09
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <h6 class="fw-bold text-primary mb-2">Especificación del Caso de Uso Principal (CU-05: Registrar Salida con Validación):</h6>
+                        <ul class="text-secondary small">
+                            <li><strong>Actor:</strong> Encargado de Almacén / Administrador.</li>
+                            <li><strong>Precondición:</strong> El usuario debe haber iniciado sesión y el almacén de origen debe contener juguetes registrados.</li>
+                            <li><strong>Flujo Principal:</strong>
+                                <ol>
+                                    <li>El usuario selecciona el almacén de origen, motivo y agrega los juguetes con sus cantidades.</li>
+                                    <li>El sistema consulta las existencias en tiempo real de cada producto para dicho almacén.</li>
+                                    <li>El usuario confirma el despacho.</li>
+                                    <li>El sistema verifica atómicamente con bloqueo <code>FOR UPDATE</code> que cada producto tenga <code>stock_disponible >= cantidad_solicitada</code>.</li>
+                                    <li>El sistema descuenta las existencias, asienta la salida y genera los movimientos de Kardex correspondientes.</li>
+                                    <li>Se emite el comprobante oficial de salida y se registra la auditoría.</li>
+                                </ol>
+                            </li>
+                            <li><strong>Flujo Alternativo (Excepción):</strong> Si algún producto tiene stock insuficiente, el sistema interrumpe la transacción, realiza rollback y notifica al usuario con un mensaje detallado indicando el producto y las unidades faltantes.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 19. DIAGRAMA DE CLASES UML COMPLETO -->
+                <section id="sec-19" class="mb-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-0">19. Diagrama de Clases UML Completo</h4>
+                        <button class="btn btn-sm btn-outline-primary" onclick="zoomDiagram('diag-clases-uml', 'Diagrama de Clases UML Boliviamar S.R.L.')">
+                            <i class="bi bi-arrows-fullscreen me-1"></i> Ampliar Diagrama
+                        </button>
+                    </div>
+                    <p class="text-secondary small">
+                        Diagrama exhaustivo que refleja la arquitectura orientada a objetos: clases del dominio, atributos con tipo de dato y visibilidad (<code>+</code> pública, <code>-</code> privada), métodos de negocio, multiplicidades, agregación y composición.
+                    </p>
+                    <div class="diagram-container" id="diag-clases-uml">
+                        <div class="mermaid">
+classDiagram
+    %% Clases del Dominio
+    class Usuario {
+        -int id
+        -string nombre
+        -string apellidos
+        -string usuario
+        -string email
+        -string password_hash
+        -string estado
+        +login(string user, string pass) bool
+        +logout() void
+        +hasRole(string role) bool
+    }
+
+    class Rol {
+        -int id
+        -string nombre
+        -string descripcion
+        +getPermisos() array
+    }
+
+    class Categoria {
+        -int id
+        -string nombre
+        -string descripcion
+        -string estado
+        +getProductosAsociados() array
+        +validarEliminacion() bool
+    }
+
+    class JugueteProducto {
+        -int id
+        -string sku
+        -string nombre
+        -string marca
+        -decimal precioReferencial
+        -string edadRecomendada
+        -int stockMinimo
+        -string estado
+        +obtenerStockTotal() int
+        +obtenerStockPorAlmacen(int almacenId) int
+        +calcularEstadoStock() string
+    }
+
+    class Almacen {
+        -int id
+        -string nombre
+        -string codigo
+        -string direccion
+        -string responsable
+        -string estado
+        +obtenerInventarioCompleto() array
+        +verificarDisponibilidad(int prodId, int cant) bool
+    }
+
+    class Existencia {
+        -int id
+        -int productoId
+        -int almacenId
+        -int cantidad
+        +incrementar(int cant) void
+        +decrementar(int cant) void
+        +estaBajoMinimo(int min) bool
+    }
+
+    class MovimientoKardex {
+        -int id
+        -DateTime fecha
+        -int productoId
+        -int almacenId
+        -string tipoMovimiento
+        -int cantidadEntrada
+        -int cantidadSalida
+        -int saldoAnterior
+        -int saldoResultante
+        -string documentoReferencia
+        +asentarMovimiento() int
+    }
+
+    class EntradaInventario {
+        -int id
+        -string numeroEntrada
+        -DateTime fecha
+        -int proveedorId
+        -int almacenId
+        -int totalItems
+        +agregarDetalle(int prodId, int cant, decimal costo) void
+        +procesarIngreso() bool
+    }
+
+    class DetalleEntrada {
+        -int id
+        -int entradaId
+        -int productoId
+        -int cantidad
+        -decimal costoUnitario
+        -decimal subtotal
+        +calcularSubtotal() decimal
+    }
+
+    class SalidaInventario {
+        -int id
+        -string numeroSalida
+        -DateTime fecha
+        -int almacenId
+        -string motivo
+        -string destino
+        -int totalItems
+        +agregarDetalle(int prodId, int cant) void
+        +validarExistencias() bool
+        +confirmarDespacho() bool
+    }
+
+    class DetalleSalida {
+        -int id
+        -int salidaId
+        -int productoId
+        -int cantidad
+    }
+
+    class TransferenciaAlmacen {
+        -int id
+        -string numeroTransferencia
+        -DateTime fecha
+        -int almacenOrigenId
+        -int almacenDestinoId
+        -int totalItems
+        +ejecutarTrasladoAtomico() bool
+    }
+
+    class DetalleTransferencia {
+        -int id
+        -int transferenciaId
+        -int productoId
+        -int cantidad
+    }
+
+    class Proveedor {
+        -int id
+        -string razonSocial
+        -string nit
+        -string contacto
+        -string telefono
+        -string email
+        +obtenerHistorialEntradas() array
+    }
+
+    %% Relaciones y Multiplicidades
+    Usuario "1" -- "1..*" Rol : asignado_a
+    Categoria "1" -- "0..*" JugueteProducto : clasifica
+    Almacen "1" -- "0..*" Existencia : almacena
+    JugueteProducto "1" -- "0..*" Existencia : se_ubica_en
+    
+    JugueteProducto "1" -- "0..*" MovimientoKardex : genera
+    Almacen "1" -- "0..*" MovimientoKardex : registra_en
+    Usuario "1" -- "0..*" MovimientoKardex : ejecuta
+
+    Proveedor "1" -- "0..*" EntradaInventario : abastece
+    Almacen "1" -- "0..*" EntradaInventario : recepciona
+    EntradaInventario "1" *-- "1..*" DetalleEntrada : compuesta_por
+    JugueteProducto "1" -- "0..*" DetalleEntrada : incluido_en
+
+    Almacen "1" -- "0..*" SalidaInventario : despacha
+    SalidaInventario "1" *-- "1..*" DetalleSalida : compuesta_por
+    JugueteProducto "1" -- "0..*" DetalleSalida : sale_en
+
+    Almacen "1" -- "0..*" TransferenciaAlmacen : origen
+    Almacen "1" -- "0..*" TransferenciaAlmacen : destino
+    TransferenciaAlmacen "1" *-- "1..*" DetalleTransferencia : incluye
+    JugueteProducto "1" -- "0..*" DetalleTransferencia : trasladado_en
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 20. DIAGRAMA DE ACTIVIDADES -->
+                <section id="sec-20" class="mb-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-0">20. Diagrama de Actividades: Flujo Transaccional de Salidas</h4>
+                        <button class="btn btn-sm btn-outline-primary" onclick="zoomDiagram('diag-actividades', 'Diagrama de Actividades de Salida de Inventario')">
+                            <i class="bi bi-arrows-fullscreen me-1"></i> Ampliar Diagrama
+                        </button>
+                    </div>
+                    <div class="diagram-container" id="diag-actividades">
+                        <div class="mermaid">
+flowchart TD
+    Inicio([Inicio: Registrar Solicitud de Salida]) --> SelAlm[Seleccionar Almacén de Origen]
+    SelAlm --> SelItems[Agregar Productos y Cantidades Requeridas]
+    SelItems --> Enviar[Enviar Formulario al Servidor]
+    
+    Enviar --> ValToken{¿Token CSRF y<br>Rol válidos?}
+    ValToken -- No --> ErrorAuth[Rechazar y redirigir con error de seguridad] --> Fin([Fin])
+    ValToken -- Sí --> IniciarTx[Abrir Transacción de Base de Datos PDO]
+
+    IniciarTx --> BloquearFilas[Bloquear filas de Existencias con FOR UPDATE]
+    BloquearFilas --> ValStock{¿Todos los items<br>tienen stock >= pedido?}
+
+    ValStock -- No --> Rollback[Ejecutar ROLLBACK de la Transacción]
+    Rollback --> MensajeError[Mostrar notificación: Stock Insuficiente con detalle] --> Fin
+
+    ValStock -- Sí --> GuardarSalida[Insertar Cabecera en tabla salidas]
+    GuardarSalida --> GuardarDetalles[Insertar Detalles en detalle_salida]
+    GuardarDetalles --> DescontarStock[Actualizar existencias: cantidad = cantidad - pedido]
+    DescontarStock --> AsentarKardex[Insertar movimientos en movimientos_inventario]
+    AsentarKardex --> GuardarAudit[Registrar evento en tabla auditoria]
+    GuardarAudit --> CommitTx[Ejecutar COMMIT de la Transacción]
+    CommitTx --> EmiteComprobante[Generar Comprobante Oficial de Salida] --> FinExito([Fin Exitoso])
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 21. DIAGRAMAS DE SECUENCIA Y ESTADOS -->
+                <section id="sec-21" class="mb-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-0">21. Diagramas de Secuencia y Estados</h4>
+                        <button class="btn btn-sm btn-outline-primary" onclick="zoomDiagram('diag-secuencia', 'Diagrama de Secuencia y Estados de Stock')">
+                            <i class="bi bi-arrows-fullscreen me-1"></i> Ampliar Diagrama
+                        </button>
+                    </div>
+                    <div class="diagram-container" id="diag-secuencia">
+                        <div class="mermaid">
+sequenceDiagram
+    autonumber
+    actor Usuario as Encargado Almacén
+    participant Web as ExitController
+    participant Svc as InventoryService
+    participant DB as MySQL (PDO)
+    participant Kdx as KardexModel
+
+    Usuario->>Web: POST /salidas/guardar (Almacen, Items, Cantidades)
+    Web->>Web: Validar Token CSRF y Permisos
+    Web->>Svc: registerExit(data, items, userId)
+    Svc->>DB: beginTransaction()
+    loop Por cada juguete en la solicitud
+        Svc->>DB: SELECT cantidad FROM existencias WHERE producto_id = ? FOR UPDATE
+        DB-->>Svc: Retorna stock actual
+        alt Stock actual < cantidad solicitada
+            Svc->>DB: rollBack()
+            Svc-->>Web: Lanza Excepción: "Stock insuficiente"
+            Web-->>Usuario: Muestra Alerta Roja: Operación Rechazada
+        end
+    end
+    Svc->>DB: INSERT INTO salidas (...)
+    loop Por cada juguete aprobado
+        Svc->>DB: INSERT INTO detalle_salida (...)
+        Svc->>DB: UPDATE existencias SET cantidad = cantidad - ?
+        Svc->>Kdx: INSERT INTO movimientos_inventario (Tipo: SALIDA, Saldos)
+    end
+    Svc->>DB: INSERT INTO auditoria (...)
+    Svc->>DB: commit()
+    Svc-->>Web: Retorna ID de Salida Confirmada
+    Web-->>Usuario: Redirige a Comprobante Oficial de Salida con Éxito
+                        </div>
+                    </div>
+
+                    <!-- ESTADOS DEL STOCK -->
+                    <div class="mt-4 p-3 border rounded bg-white">
+                        <h6 class="fw-bold text-primary mb-2">Máquina de Estados de la Existencia de un Juguete:</h6>
+                        <div class="mermaid">
+stateDiagram-v2
+    [*] --> Agotado : Stock Inicial = 0
+    Agotado --> Normal : Entrada (Stock > Mínimo)
+    Agotado --> BajoStock : Entrada (0 < Stock < Mínimo)
+    Agotado --> EnMinimo : Entrada (Stock = Mínimo)
+
+    Normal --> Normal : Salida / Transferencia (Stock > Mínimo)
+    Normal --> EnMinimo : Salida / Transferencia (Stock = Mínimo)
+    Normal --> BajoStock : Salida / Transferencia (0 < Stock < Mínimo)
+    Normal --> Agotado : Salida Total (Stock = 0)
+
+    EnMinimo --> BajoStock : Salida (Stock < Mínimo)
+    EnMinimo --> Agotado : Salida Total (Stock = 0)
+    EnMinimo --> Normal : Entrada (Stock > Mínimo)
+
+    BajoStock --> Normal : Entrada (Stock > Mínimo)
+    BajoStock --> EnMinimo : Entrada (Stock = Mínimo)
+    BajoStock --> Agotado : Salida Total (Stock = 0)
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 22. ARQUITECTURA DE SOFTWARE E INTERFACES -->
+                <section id="sec-22">
+                    <h4 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">22. Arquitectura de Software Propuesta y Prototipos de Interfaces</h4>
+                    <p class="text-secondary">
+                        La arquitectura del sistema sigue el estándar de tres capas desacopladas mediante el patrón <strong>Modelo-Vista-Controlador (MVC)</strong>:
+                    </p>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded bg-light h-100">
+                                <h6 class="fw-bold text-primary mb-1">1. Capa de Presentación (Vistas)</h6>
+                                <p class="small text-secondary mb-0">
+                                    Vistas modulares en HTML5/PHP con estilos Bootstrap 5, paleta corporativa y dinamismo JavaScript. Consume las respuestas del servidor y envía datos sanitizados.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded bg-light h-100">
+                                <h6 class="fw-bold text-primary mb-1">2. Capa de Negocio (Controladores & Servicios)</h6>
+                                <p class="small text-secondary mb-0">
+                                    Controladores HTTP que coordinan el enrutamiento, validación CSRF, autenticación de roles y delegan la lógica crítica a <code>InventoryService</code>.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded bg-light h-100">
+                                <h6 class="fw-bold text-primary mb-1">3. Capa de Datos (Modelos & PDO MySQL)</h6>
+                                <p class="small text-secondary mb-0">
+                                    Modelos PDO con consultas preparadas y motor transaccional InnoDB que garantiza consistencia estricta y bloqueo de registros concurrentes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert alert-info border mb-0 small">
+                        <i class="bi bi-info-circle-fill me-1"></i>
+                        <strong>Aviso de Alcance Académico:</strong> Conforme a las directrices de la materia, el presente informe concluye formalmente en la Sección 22, omitiendo las secciones 23, 24 y 25.
+                    </div>
+                </section>
+            </div>
+
+            <!-- BOTÓN AL SISTEMA -->
+            <div class="card-custom p-4 text-center" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%);">
+                <h4 class="fw-bold mb-2" style="color: var(--color-morado);">¿Desea probar el sistema funcionalmente?</h4>
+                <p class="text-secondary small mb-3">Acceda con cualquiera de los tres roles preconfigurados para verificar el flujo de inventario en vivo.</p>
+                <a href="index.html" class="btn btn-morado px-4 py-2">
+                    <i class="bi bi-box-arrow-in-right me-1"></i> Iniciar Sesión en Boliviamar S.R.L.
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';mermaid.initialize({startOnLoad:true,theme:'default',securityLevel:'strict'});</script></body></html>
